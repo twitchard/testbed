@@ -1,10 +1,24 @@
-//import preact from 'preact';
-import { h, render, Component } from 'preact';
+import React from "react"
+import ReactDOM from "react-dom"
+import styled from 'styled-components'
 
-class TodoList extends Component {
+const MyButton = styled.button`
+    background:${props=>props.background};
+    margin-top:${props=>props.margin}px;
+`
+
+class ButtonComponent extends React.Component {
     render () {
-        return <h1>Hello world!</h1>
+        return (
+            <MyButton
+                margin="200"
+                background="black"
+            >Hello world!</MyButton>
+        )
     }
 }
 
-render(<TodoList/>, document.body)
+ReactDOM.render(
+    <ButtonComponent/>,
+    document.getElementById('root')
+)
